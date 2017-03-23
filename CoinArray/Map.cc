@@ -1,10 +1,9 @@
-#include <iostream>
 #include "Map.hh"
 
 Map::Map(int difficulty, char c) : 
-	height{5*difficulty*2},
-	width{5*difficulty},
-	map_array{new char*[height]}
+	height{ 5 * difficulty + rand() % 5 * difficulty},
+	width{ 5 * difficulty + rand() % 5 * difficulty},
+	map_array{new char*[height]}, emptySymbol{ c }
 {
 	for (int i = 0; i < height; i++) {
 		map_array[i] = new char[width];
@@ -17,7 +16,7 @@ Map::Map(int difficulty, char c) :
 }
 
 void Map::UpdateCell(int x, int y, char c) {
-	map_array[x][y] = c;
+	map_array[y][x] = c;
 }
 
 void Map::PrintMap() {
@@ -25,7 +24,7 @@ void Map::PrintMap() {
 		for (int j = 0; j < width; j++) {
 			std::cout << map_array[i][j];
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 }
 
@@ -35,6 +34,14 @@ int Map::getHeight() {
 
 int Map::getWidth() {
 	return width;
+}
+
+int Map::getEmptySybol() {
+	return emptySymbol;
+}
+
+char Map::getMapArray(int x, int y) {
+	return map_array[y][x];
 }
 
 Map::~Map() {
