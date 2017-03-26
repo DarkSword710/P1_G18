@@ -6,6 +6,8 @@ class CoinManager
 public:
 	CoinManager(Map &map, char c);
 	void SetCoins();
+	void UpdateCoins();
+	char getCoinSymbol();
 	~CoinManager();
 
 private:

@@ -9,7 +9,7 @@ public:
 	void PrintMap();
 	int getHeight();
 	int getWidth();
-	int getEmptySybol();
+	int getEmptySymbol();
 	char getMapArray(int x, int y);
 	~Map();
 

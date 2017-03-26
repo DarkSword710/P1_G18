@@ -36,7 +36,7 @@ int Map::getWidth() {
 	return width;
 }
 
-int Map::getEmptySybol() {
+int Map::getEmptySymbol() {
 	return emptySymbol;
 }
 
