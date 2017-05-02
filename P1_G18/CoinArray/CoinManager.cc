@@ -9,6 +9,9 @@ CoinManager::CoinManager(Map &map, char c):
 
 void CoinManager::SetCoins() {
 	float minCoins = map.getHeight() * map.getWidth() * 0.03; //Com a mínim hi haurá monedes equivalents al 3% de les dimensions del mapa
+	if (minCoins < 1.0) {
+		minCoins = 1.0;
+	}
 	float maxCoins = map.getHeight() * map.getWidth() * 0.13; //Com a máxim hi haura monedes equivalents al 13% de les dimensions del mapa
 	coins = minCoins + rand() % static_cast<int>(maxCoins - minCoins); //Genera una quantitat de monedes aleatoria en funció del marge
 	
