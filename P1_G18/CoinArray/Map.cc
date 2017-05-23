@@ -3,9 +3,9 @@
 Map::Map(int difficulty, char c) : //Constructor del mapa
 	height{ 5 * difficulty + rand() % 5 * difficulty}, //Genera l'alçada del mapa de manera aleatoria compresa entre [5*difficulty, 5*difficulty*2)
 	width{ 5 * difficulty + rand() % 5 * difficulty}, //Genera l'amplada del mapa de manera aleatoria compresa entre [5*difficulty, 5*difficulty*2)
-	map_array{new char*[height]}, //Inicialitza un array de punters al Heap
 	emptySymbol{ c } //Símbol de casella buida
 {
+	map_array = new char*[height]; //Inicialitza un array de punters al Heap
 	for (int i = 0; i < height; i++) {
 		map_array[i] = new char[width]; //Recorre l'array de punters creant un nou array 2D al Heap
 	}
